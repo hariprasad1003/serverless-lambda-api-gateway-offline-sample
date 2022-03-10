@@ -1,0 +1,4 @@
+node_modules
+.sls-simulate-registry
+package-lock.json
+package.json

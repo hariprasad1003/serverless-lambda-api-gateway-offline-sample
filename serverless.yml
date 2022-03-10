@@ -1,16 +1,22 @@
-service: hellosvc
+service: greetingsvc
 
 provider:
   name: aws
   runtime: python3.6
 
 functions:
-  hello:
-    handler: handler.hello
+  get-greeting:
+    handler: handler.get_greeting
     events:
       - http:
-          path: hello
+          path: get/greeting
           method: get
+  post-greeting:
+    handler: handler.post_greeting
+    events:
+      - http:
+          path: post/greeting
+          method: post
 
 plugins:
   - serverless-plugin-simulate
