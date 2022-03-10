@@ -1,0 +1,17 @@
+service: hellosvc
+
+provider:
+  name: aws
+  runtime: python3.6
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - http:
+          path: hello
+          method: get
+
+plugins:
+  - serverless-plugin-simulate
+  - serverless-python-requirements
